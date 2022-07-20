@@ -1,0 +1,53 @@
+@import '../../styles/breakpoints.module.scss';
+@import '../../styles/typography.module.scss';
+@import '../../styles/variables.module.scss';
+
+.navigation {
+  align-items: center;
+  box-shadow: $box-shadow-navbar;
+  display: flex;
+  height: $navbar-height;
+  justify-content: space-between;
+  padding: 2rem 2.5rem;
+
+  .logo {
+    @include logo;
+
+    display: flex;
+    align-items: center;
+
+    .logoIcon {
+      color: $primary-blue;
+      transform: scale(1.7);
+      margin-right: 1rem;
+    }
+  }
+
+  .userWrapper {
+    display: flex;
+    align-items: center;
+    .userData {
+      & > img {
+        box-shadow: $box-shadow-sidebar;
+        border-radius: 0.5rem;
+        height: 3.8rem;
+        width: 3.8rem;
+        object-fit: cover;
+      }
+    }
+    .userInformation {
+      display: none;
+
+      @media ($md-up) {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .name {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-left: 1.5rem;
+      }
+    }
+  }
+}

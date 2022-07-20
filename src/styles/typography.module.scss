@@ -1,0 +1,20 @@
+@import './variables.module.scss';
+
+@mixin cta {
+  color: $white;
+  font-family: $primary-font;
+  font-size: 1.6rem;
+}
+
+@mixin nav-item {
+  color: $black;
+  font-family: $primary-font;
+  font-size: 1.6rem;
+}
+
+@mixin logo {
+  color: $black;
+  font-family: $primary-font;
+  font-size: 1.8rem;
+  font-weight: 700;
+}

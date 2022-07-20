@@ -1,0 +1,17 @@
+@import './styles/breakpoints.module.scss';
+@import './styles/variables.module.scss';
+
+.app {
+  text-align: center;
+  width: 100%;
+}
+
+.mainWrapper {
+  display: flex;
+  flex-direction: column;
+
+  @media ($md-up) {
+    flex-direction: row;
+    min-height: calc(100vh - $navbar-height);
+  }
+}
