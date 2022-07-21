@@ -1,7 +1,9 @@
 import cx from 'classnames';
 import { useState, useEffect } from 'react';
-import { checkWordFrequency } from '../../utils/utils';
+import { checkWordFrequency, wordFrequencyCalculator } from '../../utils/utils';
 import Button from '../Button/Button';
+import SimilarWords from '../SimilarWords/SimilarWords';
+import { levenshteinEditDistance } from 'levenshtein-edit-distance';
 
 import styles from './WordFrequency.module.scss';
 
@@ -12,25 +14,39 @@ type Props = {
 
 const WordFrequency = (props: Props) => {
   const { noteId, description } = props;
-  const [frequencyInputValue, setFrequencyInputValue] = useState('');
+  const [frequencyInputValue, setFrequencyInputValue] = useState<string>('');
   const [frequency, setFrequency] = useState<string>('');
+  const [similarWords, setSimilarWords] = useState<string[]>([]);
 
   const requestWordOnClickHandler = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     if (frequencyInputValue.length === 0 || description.length === 0) {
       setFrequency('Please type a word on the input field.');
     } else {
-      const frequencyValue = checkWordFrequency(
+      const frequencyValue: string = checkWordFrequency(
         description,
         frequencyInputValue
       );
       setFrequency(frequencyValue);
+      validateSimilarWords();
     }
+  };
+
+  const validateSimilarWords = () => {
+    const frequencyArray = wordFrequencyCalculator(description);
+    const similarWordsArray: string[] = [];
+    frequencyArray.forEach((value: number, key: string) => {
+      if (levenshteinEditDistance(frequencyInputValue, key) === 1) {
+        similarWordsArray.push(key);
+      }
+    });
+    setSimilarWords(similarWordsArray);
   };
 
   useEffect(() => {
     setFrequencyInputValue('');
     setFrequency('');
+    setSimilarWords([]);
   }, [noteId]);
 
   return (
@@ -51,15 +67,11 @@ const WordFrequency = (props: Props) => {
         handleOnClickEvent={requestWordOnClickHandler}
         smallVersion
       />
-
       <div className={styles.frequency}>
         Frequency: <span>{frequency}</span>
       </div>
       <span className={styles.title}>Similar Words</span>
-      <ul>
-        <li>Word 1</li>
-        <li>Word 2</li>
-      </ul>
+      <SimilarWords similarWords={similarWords} />
     </div>
   );
 };
