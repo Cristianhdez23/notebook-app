@@ -30,6 +30,7 @@ New features to implement in the future:
 - Connection  with a DB.
 - Richtext: Being able to add not only text, but images, tables, videos, audio.
 - Integration testing with Cypress.
+- i18n.
 
 ## Node Version
 
@@ -57,5 +58,5 @@ npm run build
 ```
 
 ## Live version
-This project is hosted in Netlify.
+This project is hosted on Netlify.
 You can see a live version of Notebook App [Here](https://aquamarine-starlight-7884fc.netlify.app/)

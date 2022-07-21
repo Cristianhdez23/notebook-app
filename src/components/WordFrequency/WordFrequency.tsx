@@ -15,7 +15,7 @@ type Props = {
 const WordFrequency = (props: Props) => {
   const { noteId, description } = props;
   const [frequencyInputValue, setFrequencyInputValue] = useState<string>('');
-  const [frequency, setFrequency] = useState<string>('');
+  const [frequency, setFrequency] = useState<number | null | string>(null);
   const [similarWords, setSimilarWords] = useState<string[]>([]);
 
   const requestWordOnClickHandler = (e: React.MouseEvent<HTMLElement>) => {
@@ -23,9 +23,9 @@ const WordFrequency = (props: Props) => {
     if (frequencyInputValue.length === 0 || description.length === 0) {
       setFrequency('Please type a word on the input field.');
     } else {
-      const frequencyValue: string = checkWordFrequency(
+      const frequencyValue: number = checkWordFrequency(
         description,
-        frequencyInputValue
+        frequencyInputValue.trim()
       );
       setFrequency(frequencyValue);
       validateSimilarWords();
@@ -36,7 +36,7 @@ const WordFrequency = (props: Props) => {
     const frequencyArray = wordFrequencyCalculator(description);
     const similarWordsArray: string[] = [];
     frequencyArray.forEach((value: number, key: string) => {
-      if (levenshteinEditDistance(frequencyInputValue, key) === 1) {
+      if (levenshteinEditDistance(frequencyInputValue.trim(), key) === 1) {
         similarWordsArray.push(key);
       }
     });
