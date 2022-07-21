@@ -31,6 +31,7 @@ New features to implement in the future:
 - Richtext: Being able to add not only text, but images, tables, videos, audio.
 - Integration testing with Cypress.
 - i18n.
+- Routing: For new functionalities.
 
 ## Node Version
 
