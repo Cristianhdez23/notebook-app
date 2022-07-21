@@ -5,7 +5,7 @@ For this project I decided to use [ReactJS](https://reactjs.org/) version 18.2.0
 ## Offline Mode
 
 - User inputs will persist in the browser thanks to the ```LocalStorage API``` provided by the browser.
-- Project can be run as a Progressive Web Apps(PWA). Offline mode is supported.
+- The Project can be run as a Progressive Web Apps(PWA). Offline mode is supported.
 
 ## How to use Notebook App
 
@@ -18,12 +18,12 @@ Create a new entry by clicking on the ```Add a new entry``` button.
 An edit view will appear on screen. You can start editing the ```title``` and the ```description``` of the new entry. Also, you will see relevant information about the new entry.
 ![image](https://user-images.githubusercontent.com/30419456/180275878-88e4e8c9-9ef7-4fc7-8713-708b1b8a09ea.png)
 
-In ```Frequency and Similar Words``` section, we can check the frequency of a request word in our entry. Also Similar words will be display on screen. 
+In ```Frequency and Similar Words``` section, we can check the frequency of a request word in our entry. Also Similar words will be displayed on screen. 
 ![image](https://user-images.githubusercontent.com/30419456/180276656-56b919ae-96ed-466c-9e91-4a4943357dff.png)
 
 ## Next Steps
 
-New features to implement on the future:
+New features to implement in the future:
 - Authentication: App can be used with multiple users and note does not mix up.
 - Advance search system: Can search for frequency in multiple notes.
 - Tags on each note.
