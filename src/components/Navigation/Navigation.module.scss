@@ -1,20 +1,19 @@
 @import '../../styles/breakpoints.module.scss';
 @import '../../styles/typography.module.scss';
 @import '../../styles/variables.module.scss';
+@import '../../styles/flex.module.scss';
 
 .navigation {
-  align-items: center;
+  @include flex-center-vert;
+
   box-shadow: $box-shadow-navbar;
-  display: flex;
   height: $navbar-height;
   justify-content: space-between;
   padding: 2rem 2.5rem;
 
   .logo {
     @include logo;
-
-    display: flex;
-    align-items: center;
+    @include flex-center-vert;
 
     .logoIcon {
       color: $primary-blue;
@@ -24,8 +23,7 @@
   }
 
   .userWrapper {
-    display: flex;
-    align-items: center;
+    @include flex-center-vert;
 
     .userData {
       & > img {
@@ -41,8 +39,7 @@
       display: none;
 
       @media ($md-up) {
-        display: flex;
-        flex-direction: column;
+        @include flex-col;
       }
 
       .name {

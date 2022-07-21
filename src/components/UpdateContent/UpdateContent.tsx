@@ -10,6 +10,7 @@ type Props = {
 
 const UpdateContent = (props: Props) => {
   const { title, description, onChangeField } = props;
+
   return (
     <div className={styles.editWindow}>
       <label className={styles.input}>

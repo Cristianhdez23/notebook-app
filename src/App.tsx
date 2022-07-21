@@ -25,7 +25,7 @@ const App: React.FC = () => {
     setActiveNote(newNote.id);
   };
 
-  const onUpdateNote = (updatedNote: NoteTypes) => {
+  const onUpdateNote = (updatedNote: NoteTypes): void => {
     const updatedNotesArr = notesArray.map((note) => {
       if (note.id === updatedNote.id) {
         return updatedNote;
@@ -37,7 +37,7 @@ const App: React.FC = () => {
     setNotesArray(updatedNotesArr);
   };
 
-  const getActiveNote = () => {
+  const getActiveNote = (): NoteTypes | undefined => {
     return notesArray.find(({ id }) => id === activeNote);
   };
 
