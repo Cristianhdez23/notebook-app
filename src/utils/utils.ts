@@ -2,7 +2,7 @@ import { NoteTypes } from './types';
 
 const REGEX_SPLIT = /(?:,| |:|;|[.]|[?])+/;
 
-const wordFrequencyCalculator = (description: string) => {
+export const wordFrequencyCalculator = (description: string) => {
   if (description.length === 0) {
     return {};
   }
@@ -20,7 +20,10 @@ const wordFrequencyCalculator = (description: string) => {
   return frequencyMap;
 };
 
-export const checkWordFrequency = (description: string, word: string) => {
+export const checkWordFrequency = (
+  description: string,
+  word: string
+): string => {
   const frequencyMap = wordFrequencyCalculator(description);
 
   if (frequencyMap.has(word)) {
@@ -30,7 +33,9 @@ export const checkWordFrequency = (description: string, word: string) => {
   }
 };
 
-export const sortedArrayDesc = (arrayData: Array<NoteTypes>) => {
+export const sortedArrayDesc = (
+  arrayData: Array<NoteTypes>
+): Array<NoteTypes> => {
   return arrayData.sort((a, b) => b.lastModified - a.lastModified);
 };
 

@@ -1,0 +1,7 @@
+@import '../../styles/typography.module.scss';
+
+.item {
+  @include small-text;
+
+  text-align: left;
+}
