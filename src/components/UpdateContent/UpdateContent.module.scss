@@ -8,14 +8,15 @@
 
   .input {
     @include flex-col-fs;
-    width: 100%;
-
     @include nav-item;
+
+    width: 100%;
 
     & > input,
     textarea {
-      width: 100%;
       @include nav-item;
+
+      width: 100%;
     }
   }
 }

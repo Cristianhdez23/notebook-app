@@ -1,4 +1,4 @@
-import React, { useState, useId } from 'react';
+import React, { useState, useId, useEffect } from 'react';
 import Homepage from './pages/Homepage/Homepage';
 import Sidebar from './components/Sidebar/Sidebar';
 import { NoteTypes } from './utils/types';
@@ -6,7 +6,9 @@ import { NoteTypes } from './utils/types';
 import styles from './App.module.scss';
 
 const App: React.FC = () => {
-  const [notesArray, setNotesArray] = useState<NoteTypes[]>([]);
+  const [notesArray, setNotesArray] = useState<NoteTypes[]>(
+    localStorage.notebookEntries ? JSON.parse(localStorage.notebookEntries) : []
+  );
   const [activeNote, setActiveNote] = useState<string>('');
   const id = useId();
 
@@ -38,6 +40,10 @@ const App: React.FC = () => {
   const getActiveNote = () => {
     return notesArray.find(({ id }) => id === activeNote);
   };
+
+  useEffect(() => {
+    localStorage.setItem('notebookEntries', JSON.stringify(notesArray));
+  }, [notesArray]);
 
   return (
     <main className={styles.mainWrapper}>
