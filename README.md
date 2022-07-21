@@ -50,6 +50,12 @@ npm start
 
 Open [http://localhost:3000](http://localhost:3000)
 
+## Testing mode
+
+To run test locally
+```bash
+npm test
+```
 
 ## Production mode
 Ceates a `build` directory with a production build of your app.
