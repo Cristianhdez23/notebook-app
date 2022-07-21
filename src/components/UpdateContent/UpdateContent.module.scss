@@ -1,0 +1,22 @@
+@import '../../styles/typography.module.scss';
+@import '../../styles/grid.module.scss';
+@import '../../styles/flex.module.scss';
+
+.editWindow {
+  @include col(1);
+  @include flex-col-fs;
+
+  .input {
+    @include flex-col-fs;
+    @include nav-item;
+
+    width: 100%;
+
+    & > input,
+    textarea {
+      @include nav-item;
+
+      width: 100%;
+    }
+  }
+}

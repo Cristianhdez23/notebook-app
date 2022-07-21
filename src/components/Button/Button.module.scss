@@ -1,0 +1,23 @@
+@import '../../styles/typography.module.scss';
+@import '../../styles/variables.module.scss';
+
+.cta {
+  @include cta;
+
+  align-items: center;
+  background: $primary-blue;
+  border: none;
+  border-radius: 1rem;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  padding: 2rem;
+  width: 100%;
+
+  &:hover {
+    background: $hover-cta-blue;
+  }
+  .ctaIcon {
+    margin-right: 1.5rem;
+  }
+}

@@ -1,0 +1,13 @@
+@import './styles/breakpoints.module.scss';
+@import './styles/variables.module.scss';
+
+.mainWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @media ($md-up) {
+    flex-direction: row;
+    min-height: calc(100vh - $navbar-height);
+  }
+}

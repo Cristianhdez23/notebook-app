@@ -1,0 +1,23 @@
+@import '../../styles/typography.module.scss';
+@import '../../styles/grid.module.scss';
+@import '../../styles/flex.module.scss';
+
+.frequencyAndSimilarWindow {
+  @include col(1);
+  @include container;
+
+  .frequency {
+    @include small-text;
+    margin-bottom: 1.5rem;
+
+    & > span {
+      font-weight: 700;
+    }
+  }
+
+  .title {
+    @include logo;
+
+    margin-bottom: 1.5rem;
+  }
+}

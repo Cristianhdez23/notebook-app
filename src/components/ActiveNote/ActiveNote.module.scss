@@ -1,0 +1,47 @@
+@import '../../styles/breakpoints.module.scss';
+@import '../../styles/typography.module.scss';
+@import '../../styles/grid.module.scss';
+@import '../../styles/flex.module.scss';
+
+.activeNote {
+  @include grid;
+
+  .previewWindow {
+    @include col(1);
+    @include container;
+
+    .titlePreview {
+      @include h1;
+    }
+
+    .descriptionPreview {
+      @include paragraph;
+
+      text-align: left;
+      word-break: break-all;
+    }
+
+    @media ($md-up) {
+      @include col(1, 8);
+    }
+  }
+
+  .generalWindow {
+    @include col(1);
+    @include container;
+
+    & > small {
+      font-size: 1.3rem;
+    }
+
+    @media ($md-up) {
+      @include col(8);
+    }
+  }
+
+  .title {
+    @include logo;
+
+    margin-bottom: 1.5rem;
+  }
+}

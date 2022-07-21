@@ -1,0 +1,62 @@
+@import '../../styles/breakpoints.module.scss';
+@import '../../styles/typography.module.scss';
+@import '../../styles/variables.module.scss';
+
+.sidebar {
+  display: flex;
+  box-shadow: $box-shadow-sidebar;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+
+  @media ($md-up) {
+    width: $sidebar-width;
+  }
+
+  .navWrapper {
+    .navItem {
+      @include nav-item;
+
+      align-items: center;
+      display: flex;
+      padding: 1.5rem 2.5rem;
+      position: relative;
+      width: 100%;
+
+      .navItemIcon {
+        margin-right: 1.5rem;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 0.5rem;
+      }
+
+      &:hover {
+        color: $primary-blue;
+      }
+    }
+
+    .active {
+      background: $primary-blue-alpha;
+      color: $primary-blue;
+
+      &::before {
+        background: $primary-blue;
+        content: '';
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 0.5rem;
+      }
+    }
+  }
+
+  .ctaWrapper {
+    padding: 0.5rem 2.5rem 2rem;
+
+    @media ($md-up) {
+      padding: 3rem 2.5rem;
+    }
+  }
+}
