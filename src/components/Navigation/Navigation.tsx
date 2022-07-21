@@ -1,6 +1,6 @@
 import React from 'react';
 import { GiNotebook } from 'react-icons/gi';
-import UserPhoto from '../assets/imgs/user.jpg';
+import UserPhoto from '../../assets/imgs/user.jpg';
 
 import styles from './Navigation.module.scss';
 

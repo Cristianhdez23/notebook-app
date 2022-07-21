@@ -1,0 +1,21 @@
+@import '../../styles/typography.module.scss';
+@import '../../styles/grid.module.scss';
+@import '../../styles/flex.module.scss';
+
+.editWindow {
+  @include col(1);
+  @include flex-col-fs;
+
+  .input {
+    @include flex-col-fs;
+    width: 100%;
+
+    @include nav-item;
+
+    & > input,
+    textarea {
+      width: 100%;
+      @include nav-item;
+    }
+  }
+}

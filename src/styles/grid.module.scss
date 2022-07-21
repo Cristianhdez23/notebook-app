@@ -1,0 +1,17 @@
+@import './breakpoints.module.scss';
+@import './variables.module.scss';
+
+@mixin grid {
+  display: grid;
+  gap: $grid-gap;
+  grid-template-columns: repeat(6, 1fr);
+
+  @media ($md-up) {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+@mixin col($start, $end: -1) {
+  grid-column-start: $start;
+  grid-column-end: $end;
+}

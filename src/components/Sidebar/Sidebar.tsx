@@ -5,10 +5,12 @@ import { TbNotebook, TbTrash } from 'react-icons/tb';
 
 import styles from './Sidebar.module.scss';
 
-type Props = {};
+type Props = {
+  onAddNote: React.MouseEventHandler<HTMLButtonElement>;
+};
 
-const Sidebar: React.FC = (props: Props) => {
-  const createNewEntry = () => {};
+const Sidebar = (props: Props) => {
+  const { onAddNote } = props;
 
   return (
     <aside className={styles.sidebar}>
@@ -24,10 +26,7 @@ const Sidebar: React.FC = (props: Props) => {
       </nav>
 
       <div className={styles.ctaWrapper}>
-        <Button
-          btnText={'Add a new entry'}
-          handleOnClickEvent={createNewEntry}
-        />
+        <Button btnText={'Add a new entry'} handleOnClickEvent={onAddNote} />
       </div>
     </aside>
   );

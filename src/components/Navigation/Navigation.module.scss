@@ -26,6 +26,7 @@
   .userWrapper {
     display: flex;
     align-items: center;
+
     .userData {
       & > img {
         box-shadow: $box-shadow-sidebar;
@@ -35,6 +36,7 @@
         object-fit: cover;
       }
     }
+
     .userInformation {
       display: none;
 

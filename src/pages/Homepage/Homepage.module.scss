@@ -1,0 +1,43 @@
+@import '../../styles/breakpoints.module.scss';
+@import '../../styles/variables.module.scss';
+@import '../../styles/grid.module.scss';
+
+.content {
+  @include grid;
+
+  background: $bg-color;
+  padding: 2.5rem;
+  text-align: center;
+  width: 100%;
+
+  @media ($md-up) {
+
+    height: calc(100vh - $navbar-height);
+    padding: 3.5rem;
+  }
+
+  .noteList {
+    grid-column: 1 / -1;
+
+    @media ($md-up) {
+      grid-column: 1 / 5;
+      overflow-y: auto;
+    }
+
+    .noNotesMsg {
+      font-size: 2rem;
+    }
+  }
+
+  .activeNote {
+    background: $white;
+    border: 1px solid $border-color;
+    padding: 1.5rem;
+    grid-column: 1 / -1;
+
+    @media ($md-up) {
+      grid-column: 5 / -1;
+      overflow-y: auto;
+    }
+  }
+}
