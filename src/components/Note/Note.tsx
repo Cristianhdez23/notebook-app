@@ -14,14 +14,14 @@ const Note = (props: Props) => {
     noteData: { id, title, description, lastModified },
     setActiveNote,
   } = props;
+
   return (
     <button className={styles.noteBtn} onClick={() => setActiveNote(id)}>
       <article className={styles.note}>
         <h2 className={styles.title}>{title}</h2>
         <p className={styles.description}>{description}</p>
         <small className={styles.date}>
-          Last Modified:
-          {dateToString(lastModified)}
+          Last Modified: {dateToString(lastModified)}
         </small>
       </article>
     </button>
