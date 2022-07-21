@@ -33,5 +33,9 @@
       font-size: 1.3rem;
       text-align: right;
     }
+
+    &:hover {
+      background: $border-color;
+    }
   }
 }
