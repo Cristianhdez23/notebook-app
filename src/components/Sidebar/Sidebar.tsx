@@ -26,7 +26,7 @@ const Sidebar = (props: Props) => {
       </nav>
 
       <div className={styles.ctaWrapper}>
-        <Button btnText={'Add a new entry'} handleOnClickEvent={onAddNote} />
+        <Button btnText={'Add a new entry'} handleOnClickEvent={onAddNote} showIcon/>
       </div>
     </aside>
   );
