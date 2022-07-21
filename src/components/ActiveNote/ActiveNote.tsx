@@ -16,7 +16,7 @@ const ActiveNote = (props: Props) => {
     onUpdateNote,
   } = props;
 
-  const onChangeField = (field: string, value: string) => {
+  const onChangeField = (field: string, value: string): void => {
     const noteUpdatedData: NoteTypes = {
       ...props.activeNote,
       [field]: value,

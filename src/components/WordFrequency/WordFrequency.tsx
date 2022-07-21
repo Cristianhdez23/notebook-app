@@ -18,7 +18,7 @@ const WordFrequency = (props: Props) => {
   const [frequency, setFrequency] = useState<number | null | string>(null);
   const [similarWords, setSimilarWords] = useState<string[]>([]);
 
-  const requestWordOnClickHandler = (e: React.MouseEvent<HTMLElement>) => {
+  const requestWordOnClickHandler = (e: React.MouseEvent<HTMLElement>): void => {
     e.preventDefault();
     if (frequencyInputValue.length === 0 || description.length === 0) {
       setFrequency('Please type a word on the input field.');
@@ -32,7 +32,7 @@ const WordFrequency = (props: Props) => {
     }
   };
 
-  const validateSimilarWords = () => {
+  const validateSimilarWords = (): void => {
     const frequencyArray = wordFrequencyCalculator(description);
     const similarWordsArray: string[] = [];
     frequencyArray.forEach((value: number, key: string) => {

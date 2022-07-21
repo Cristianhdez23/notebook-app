@@ -30,8 +30,8 @@ export const wordFrequencyCalculator = (description: string) => {
 /**
  * Determine the frequency of word occurrence in a given entry description.
  *
- * @param description - Entry description
- * @param word - Word requested
+ * @param {string} description - Entry description
+ * @param {string} word - Word requested
  * @returns Return the occurrence of a word on a given description(string).
  */
 export const checkWordFrequency = (
@@ -51,7 +51,7 @@ export const checkWordFrequency = (
  * Sort an Array in Descending Order
  *
  * @param {Array<NoteTypes>} arrayData - Given Array
- * @returns Sorted Array in Descending Order
+ * @returns {Array<NoteTypes>} - Sorted Array in Descending Order
  */
 export const sortedArrayDesc = (
   arrayData: Array<NoteTypes>
@@ -62,9 +62,9 @@ export const sortedArrayDesc = (
 /**
  * Return a Date as a readable string based on the location of the user.
  *
- * @param dateString - Javascript date number.
- * @returns Return a Date as a readable string based on the location of the user.
+ * @param {number} dateString - Javascript date number.
+ * @returns {string} Return a Date as a readable string based on the location of the user.
  */
-export const dateToString = (dateString: number) => {
+export const dateToString = (dateString: number): string => {
   return new Date(dateString).toLocaleString();
 };

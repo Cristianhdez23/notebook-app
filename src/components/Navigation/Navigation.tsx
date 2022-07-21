@@ -4,9 +4,7 @@ import UserPhoto from '../../assets/imgs/user.jpg';
 
 import styles from './Navigation.module.scss';
 
-type Props = {};
-
-const Navigation: React.FC = (props: Props) => {
+const Navigation: React.FC = () => {
   return (
     <header className={styles.navigation}>
       <a href='/' className={styles.logo}>

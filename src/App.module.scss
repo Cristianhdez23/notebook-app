@@ -1,9 +1,10 @@
 @import './styles/breakpoints.module.scss';
 @import './styles/variables.module.scss';
+@import './styles/flex.module.scss';
 
 .mainWrapper {
-  display: flex;
-  flex-direction: column;
+  @include flex-col;
+
   width: 100%;
 
   @media ($md-up) {

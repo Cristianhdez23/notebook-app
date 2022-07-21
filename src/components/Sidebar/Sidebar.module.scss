@@ -1,11 +1,12 @@
 @import '../../styles/breakpoints.module.scss';
 @import '../../styles/typography.module.scss';
 @import '../../styles/variables.module.scss';
+@import '../../styles/flex.module.scss';
 
 .sidebar {
-  display: flex;
+  @include flex-col;
+
   box-shadow: $box-shadow-sidebar;
-  flex-direction: column;
   justify-content: space-between;
   width: 100%;
 
@@ -16,9 +17,8 @@
   .navWrapper {
     .navItem {
       @include nav-item;
+      @include flex-center-vert;
 
-      align-items: center;
-      display: flex;
       padding: 1.5rem 2.5rem;
       position: relative;
       width: 100%;
