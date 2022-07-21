@@ -8,11 +8,19 @@
 
   .frequency {
     @include small-text;
-    margin-bottom: 1.5rem;
+    margin: 1.5rem 0;
+    text-transform: uppercase;
 
     & > span {
       font-weight: 700;
     }
+  }
+
+  .frequencyInput {
+    @include nav-item;
+
+    margin-bottom: 2rem;
+    width: 100%;
   }
 
   .title {

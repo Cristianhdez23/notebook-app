@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles/globals.scss';
 import App from './App';
-import * as serviceWorkerRegistration from './service-worker/serviceWorkerRegistration';
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import Navigation from './components/Navigation/Navigation';
 
 const root = ReactDOM.createRoot(

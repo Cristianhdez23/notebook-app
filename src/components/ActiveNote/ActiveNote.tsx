@@ -1,6 +1,6 @@
 import { NoteTypes } from '../../utils/types';
 import { dateToString } from '../../utils/utils';
-import Frequency from '../Frequency/Frequency';
+import WordFrequency from '../WordFrequency/WordFrequency';
 import UpdateContent from '../UpdateContent/UpdateContent';
 
 import styles from './ActiveNote.module.scss';
@@ -12,7 +12,7 @@ type Props = {
 
 const ActiveNote = (props: Props) => {
   const {
-    activeNote: { title, description, createdDate, lastModified },
+    activeNote: { id, title, description, createdDate, lastModified },
     onUpdateNote,
   } = props;
 
@@ -52,7 +52,7 @@ const ActiveNote = (props: Props) => {
         </small>
       </div>
 
-      <Frequency />
+      <WordFrequency description={description} noteId={id} />
     </article>
   );
 };

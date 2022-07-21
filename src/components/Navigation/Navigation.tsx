@@ -16,10 +16,10 @@ const Navigation: React.FC = (props: Props) => {
 
       <div className={styles.userWrapper}>
         <div className={styles.userData}>
-          <img src={UserPhoto} alt='Cristian Hernandez' />
+          <img src={UserPhoto} alt='John Doe' />
         </div>
         <div className={styles.userInformation}>
-          <span className={styles.name}>Cristian Hernandez</span>
+          <span className={styles.name}>John Doe</span>
         </div>
       </div>
     </header>
