@@ -1,9 +1,9 @@
 import cx from 'classnames';
 import { useState, useEffect } from 'react';
 import { checkWordFrequency, wordFrequencyCalculator } from '../../utils/utils';
+import { levenshteinEditDistance } from 'levenshtein-edit-distance';
 import Button from '../Button/Button';
 import SimilarWords from '../SimilarWords/SimilarWords';
-import { levenshteinEditDistance } from 'levenshtein-edit-distance';
 
 import styles from './WordFrequency.module.scss';
 
@@ -50,9 +50,13 @@ const WordFrequency = (props: Props) => {
   }, [noteId]);
 
   return (
-    <div className={cx(styles.frequencyAndSimilarWindow)}>
+    <div
+      className={cx(styles.frequencyAndSimilarWindow)}
+      data-testid='word-frequency-cmp'
+    >
       <span className={styles.title}>Frequency and Similar Words</span>
       <input
+        aria-label='Request frequency of a Word.'
         className={styles.frequencyInput}
         type='text'
         id='Word Frequency'
@@ -63,12 +67,13 @@ const WordFrequency = (props: Props) => {
         }
       />
       <Button
+        data-testid='word-frequency-cta'
         btnText={'Request Frequency'}
         handleOnClickEvent={requestWordOnClickHandler}
         smallVersion
       />
       <div className={styles.frequency}>
-        Frequency: <span>{frequency}</span>
+        Frequency: <span data-testid='frequency-value'>{frequency}</span>
       </div>
       <span className={styles.title}>Similar Words</span>
       <SimilarWords similarWords={similarWords} />
